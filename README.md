@@ -1,6 +1,8 @@
 # Simple Zerodha App
 
 This is a simple Zerodha app that allows users to perform basic trading operations.
+![image](https://github.com/user-attachments/assets/8c957158-793f-40d8-81f8-3ce418ac9515)
+
 
 ## Features
 
