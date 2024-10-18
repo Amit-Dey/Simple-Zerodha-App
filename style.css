@@ -1,0 +1,151 @@
+/* Header styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arial', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    box-shadow: 2px 1px 2px #eee;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    max-height: 17px;
+}
+
+.navigation {
+    display: flex;
+}
+.nav-ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 20px;
+
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #666;
+}
+
+.nav-item a:hover {
+    color: #387ed1;
+}
+/* Hero section styles */
+.hero {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.hero-image {
+    width: 55%;
+}
+
+/* Content section styles */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 5rem;
+}
+
+.heading {
+    color: #424242;
+    font-size: 44px;
+    margin-bottom: 1rem;
+    font-weight:bold;
+}
+
+.description {
+    font-family: 'Inter', serif;
+    color: #424242;
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.button {
+    cursor: pointer;
+    padding: 12px 40px;
+    background-color: #387ed1;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+}
+
+.button:hover {
+    background-color: #000;
+}
+
+.calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.calculator h3{
+    color: #424242;
+    font-size: 44px;
+    margin-bottom: 1rem;
+    font-weight:bold;
+}
+
+.calculator p{
+    color: #424242;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.calculator-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2rem;
+    margin-bottom: 5rem;
+    flex-direction: column;
+}
+
+.calculator-inputs{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.input{
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    max-height: fit-content
+}
+
+.flexbtn{
+    width: 100%;
+}

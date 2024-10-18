@@ -1,42 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zerodha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 0;">
-    <div style="display: flex; justify-content: space-between; padding:20px 400px; box-shadow: 2px 1px 2px #eee; ">
-        <img width="150" src="./images/logo.svg" alt="logo">
-        <div>
-            <span
-                style="padding: 20px;font-family: 'Inter',serif;color:#666; font-size:14.4px; cursor:pointer">Signup</span>
-            <span
-                style="padding: 20px;font-family: 'Inter',serif;color:#666; font-size:14.4px; cursor:pointer">About</span>
-            <span
-                style="padding: 20px;font-family: 'Inter',serif;color:#666; font-size:14.4px; cursor:pointer">Products</span>
-            <span
-                style="padding: 20px;font-family: 'Inter',serif;color:#666; font-size:14.4px; cursor:pointer">Pricing</span>
-            <span
-                style="padding: 20px;font-family: 'Inter',serif;color:#666; font-size:14.4px; cursor:pointer">Support</span>
-        </div>
+<body>
+    <header class="header">
+        <img src="./images/logo.svg" alt="logo" class="logo">
+        <nav class="navigation">
+            <ul class="nav-ul">
+                <li class="nav-item"><a href="#">Signup</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Products</a></li>
+                <li class="nav-item"><a href="#">Pricing</a></li>
+                <li class="nav-item"><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="./images/landing.png" alt="Hero image" class="hero-image">
     </div>
 
-    <div style="display: flex; justify-content:center; padding-top:60px ">
-        <img width="55%" src="./images/landing.png" alt="Hero image">
+    <div class="content">
+        <h3 class="heading">Invest in everything</h3>
+        <p class="description">Online platform to invest in stocks, derivatives, mutual funds, and more</p>
+        <button class="button">Sign up now</button>
     </div>
-    <div style="display: flex; justify-content:center; padding-top:40px; ">
-        <h3 style="font-family: 'Inter',serif;color:#424242; font-size:44px; margin-bottom:0;">Invest in everything</h3>
+
+    <!-- Create a portfolio return calculator -->
+    <div class="calculator">
+        <h3 class="heading">Calculate your returns</h3>
+        <p class="description">Find out how much your money can grow by investing in stocks, mutual funds, and other
+            investment options</p>
+        <div class="calculator-box">
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <input class="input" id="capital" min="0" type="number" placeholder="Capital">
+                    <input class="input" id="years" min="0" type="number" placeholder="Years">
+                    <input class="input" id="interest" min="0" type="number" placeholder="Interest">
+                </div>
+                <input class="input" id="ammount" min="0" type="number" disabled placeholder="Amount">
+            </div>
+            <button class="button flexbtn">Calculate</button>
+        </div>
     </div>
-    <div style="display: flex; justify-content:center; ">
-        <p style="font-family: 'Inter',serif;color:#424242; font-size:20px ">Online platform to invest in stocks,
-            derivatives, mutual funds, and more</p>
     </div>
-    <br> <br> <br>
-    <div style="display: flex; justify-content:center; ">
-        <span
-            style="cursor:pointer; padding: 10px 30px; background-color: #387ed1;color: #fff;border: 1px solid rgba(0,0,0,0); border-radius: 3px;">Sign
-            up now</span>
-    </div>
+
+    <script>
+        const calculate = () => {
+            const capital = document.querySelector('#capital').value;
+            const years = document.querySelector('#years').value;
+            const interest = document.querySelector('#interest').value;
+
+            // validate the inputs
+            if (capital === '' || years === '' || interest === '') {
+                alert('Please enter all the fields');
+                return;
+            }
+            // calculate the amount which is the compound interest of the capital
+            // the interest of previous year is the capital for the next year
+            let amount = capital;
+            for (let i = 0; i < years; i++) {
+                amount = amount * (1 + interest / 100);
+            }
+            amount = Math.floor(amount);
+
+            document.querySelector('#ammount').removeAttribute('disabled');
+            document.querySelector('#ammount').value = amount.toFixed(0);
+        }
+
+        document.querySelector('.flexbtn').addEventListener('click', calculate);
+
+
+    </script>
+
 </body>
 
 </html>
